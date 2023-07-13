@@ -27,21 +27,9 @@ function _Fcitx2en()
   end
 end
 
-function _Fcitx2NonLatin()
-  if vim.b.input_toggle_flag == nil then
-    vim.b.input_toggle_flag = false
-  elseif vim.b.input_toggle_flag == true then
-    -- switch to Non-Latin input
-    vim.fn.system(fcitx_cmd .. ' -o')
-    vim.b.input_toggle_flag = false
-  end
-end
-
-vim.cmd[[
+vim.cmd [[
   augroup fcitx
-    au InsertEnter * :lua _Fcitx2NonLatin()
     au InsertLeave * :lua _Fcitx2en()
-    au CmdlineEnter [/\?] :lua _Fcitx2NonLatin()
     au CmdlineLeave [/\?] :lua _Fcitx2en()
   augroup END
 ]]

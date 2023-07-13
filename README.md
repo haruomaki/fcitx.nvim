@@ -25,3 +25,6 @@ end)
 - [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
 - [vim-barbaric](https://github.com/rlue/vim-barbaric)
 
+## What is this fork
+
+A variant that doesn't re-enable IM when entering insert mode.
